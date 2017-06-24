@@ -1,0 +1,40 @@
+{
+  "name": "numy",
+  "version": "0.0.1",
+  "description": "NUMY is a new and simple game based on your ability to sum as fast as you can",
+  "main": "src/app.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build && node ./scripts/default-lang",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hackbit/reactriot2017-numy.git"
+  },
+  "keywords": [
+    "NUMY",
+    "sum",
+    "number",
+    "game"
+  ],
+  "author": "Pavel Lang and Armen Alli",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/Hackbit/reactriot2017-numy/issues"
+  },
+  "homepage": "https://github.com/Hackbit/reactriot2017-numy#readme",
+  "dependencies": {
+    "accepts": "^1.3.3",
+    "babel-plugin-react-intl": "^2.3.1",
+    "glob": "^7.1.2",
+    "intl": "^1.2.5",
+    "next": "beta",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-intl": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.1.0"
+  }
+}
