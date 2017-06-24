@@ -7,7 +7,7 @@ const defaultMessages = glob.sync('./lang/.messages/**/*.json')
   .map(file => JSON.parse(file))
   .reduce((messages, descriptors) => {
     descriptors.forEach(({ id, defaultMessage }) => {
-      if (messages.hasOwnProperty(id)) {
+      if (messages[id]) {
         throw new Error(`Duplicate message id: ${id}`);
       }
       messages[id] = defaultMessage;
@@ -16,4 +16,4 @@ const defaultMessages = glob.sync('./lang/.messages/**/*.json')
   }, {});
 
 writeFileSync('./lang/en.json', JSON.stringify(defaultMessages, null, 2));
-console.log(`> Wrote default messages to: "${resolve('./lang/en.json')}"`);
+console.info(`> Wrote default messages to: "${resolve('./lang/en.json')}"`);

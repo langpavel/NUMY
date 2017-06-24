@@ -1,0 +1,185 @@
+body
+{
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  height: 100vh;
+  position: relative;
+    margin: 0 auto;
+}
+
+.status {
+  background:#0d5ca4;
+  height: 12vh;
+}
+
+.timer {
+  display: inline-block;
+  padding-top: 3vh;
+  padding-left: 6vh;
+  color: #FFF;
+  font-size: 2.5rem;
+}
+
+.level {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  padding-top: 3vh;
+  padding-right: 6vh;
+  color: #FFF;
+  font-size: 2.5rem;
+}
+
+.line {
+  background: #3fa4ff;
+  height: 0.3rem;
+}
+
+.display {
+  text-align:center;
+  font-size: 5.8rem;
+  line-height: 14rem;
+}
+
+.keyboard {
+    display: table;
+    position: absolute;
+    bottom:0;
+    right:0;
+    left:0;
+    width: 100%;
+}
+
+.keyrow {
+  display: table-row;
+}
+
+.keycell {
+  display: table-cell;
+  text-align: center;
+  border: #FFF solid 0.05rem;
+  font-size: 4.6rem;
+  background:#3fa4ff;
+  color: #FFF;
+  line-height: 8.5rem;
+}
+
+
+
+/*start index*/
+
+.startstatus {
+  background:#0d5ca4;
+  height: 12vh;
+}
+
+.name {
+
+  padding-top: 3vh;
+  text-align:center;
+  color: #FFF;
+  font-size: 2.5rem;
+}
+
+.logo {
+  background: url(NUMY_logo.png) center no-repeat;
+  height: 200px;
+  }
+
+.startdisplay {
+  padding-left: 60px;
+  padding-right: 60px;
+  }
+
+.start {
+  border-bottom: #CCC solid 1px;
+  font-size: 3rem;
+  color: #0d5ca4;
+  line-height: 11rem;}
+
+.stat {
+  border-bottom: #CCC solid 1px;
+  font-size: 3rem;
+  color: #0d5ca4;
+  line-height: 11rem;}
+
+.leader {
+
+  border-bottom: #CCC solid 1px;
+  font-size: 3rem;
+  color: #0d5ca4;
+  line-height: 11rem;}
+
+.set {
+  border-bottom: #CCC solid 1px;
+  font-size: 3rem;
+  color: #0d5ca4;
+  line-height: 11rem;}
+
+/*for pc*/
+
+@media (min-width: 1200px) {
+  body
+{
+
+
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000;
+  height: 100vh;
+  position: relative;
+    margin: 0 auto;
+  border-right:#CCC solid 1px;
+  border-left:#CCC solid 1px;
+  width: 600px;
+}
+
+.startstatus {
+  background:#0d5ca4;
+  height: 12vh;
+}
+
+.name {
+
+  padding-top: 3vh;
+  text-align:center;
+  color: #FFF;
+  font-size: 2.5rem;
+}
+
+.logo {
+  background: url(NUMY_logo.png) center no-repeat;
+  height: 200px;
+  }
+
+.startdisplay {
+  padding-left: 60px;
+  padding-right: 60px;
+  }
+
+.start {
+  border-bottom: #CCC solid 1px;
+  font-size: 2rem;
+  color: #0d5ca4;
+  line-height: 5rem;}
+
+.stat {
+  border-bottom: #CCC solid 1px;
+  font-size: 2rem;
+  color: #0d5ca4;
+  line-height: 5rem;}
+
+.leader {
+
+  border-bottom: #CCC solid 1px;
+  font-size: 2rem;
+  color: #0d5ca4;
+  line-height: 5rem;}
+
+.set {
+  border-bottom: #CCC solid 1px;
+  font-size: 2rem;
+  color: #0d5ca4;
+  line-height: 5rem;}
+}

@@ -14,17 +14,19 @@ export default class IntlDocument extends Document {
   }
 
   render() {
+    const { locale } = this.props;
+
     // Polyfill Intl API for older browsers
-    const polyfill = `https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.${this.props.locale}`;
+    const polyfill = `https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.${locale}`;
 
     return (
-      <html>
+      <html lang={locale}>
         <Head />
         <body>
           <Main />
           <script src={polyfill} />
           <script
-            dangerouslySetInnerHTML={{
+            dangerouslySetInnerHTML={{ // eslint-disable-line react/no-danger
               __html: this.props.localeDataScript,
             }}
           />
