@@ -16,5 +16,12 @@ module.exports = {
     'no-param-reassign': 'off',
     'import/no-dynamic-require': 'off',
     'global-require': 'off',
+    // Recommend not to leave any console.log in your code
+    'no-console': [
+      'warn',
+      {
+        allow: ['warn', 'error', 'info', 'trace'],
+      },
+    ],
   },
 };
