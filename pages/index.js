@@ -1,6 +1,7 @@
 import React from 'react';
 import { FormattedMessage, defineMessages } from 'react-intl';
 import Head from 'next/head';
+import Link from 'next/link';
 import pageWithIntl from '../components/PageWithIntl';
 import Layout from '../components/Layout';
 
@@ -23,11 +24,15 @@ export default pageWithIntl(({ intl }) => (
         </div>
       </div>
       <div className="line" />
-      <div className="logo" />
+      <div className="logo">
+        <img width="150" height="150" src="/numy.png" alt="NUMY" />
+      </div>
       <div className="startdisplay">
-        <div className="start">
-          <FormattedMessage id="index.start" defaultMessage="Start" />
-        </div>
+        <Link href="/game">
+          <div className="start">
+            <FormattedMessage id="index.start" defaultMessage="Start" />
+          </div>
+        </Link>
         <div className="stat">
           <FormattedMessage id="index.stat" defaultMessage="Statistics" />
         </div>

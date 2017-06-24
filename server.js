@@ -6,8 +6,9 @@ Intl.NumberFormat = IntlPolyfill.NumberFormat;
 Intl.DateTimeFormat = IntlPolyfill.DateTimeFormat;
 
 const { readFileSync } = require('fs');
-const { basename } = require('path');
+const { basename, join } = require('path');
 const { createServer } = require('http');
+const { parse } = require('url');
 const accepts = require('accepts');
 const glob = require('glob');
 const next = require('next');
@@ -39,14 +40,25 @@ const getMessages = locale => require(`./lang/${locale}.json`);
 
 app.prepare().then(() => {
   createServer((req, res) => {
-    const accept = accepts(req);
-    const locale = accept.language(dev ? ['en'] : languages);
-    req.locale = locale;
-    req.localeDataScript = getLocaleDataScript(locale);
-    req.messages = dev ? {} : getMessages(locale);
-    handle(req, res);
+    const parsedUrl = parse(req.url, true);
+    const rootStaticFiles = [
+      '/numy.png',
+      // '/sitemap.xml',
+      // '/favicon.ico',
+    ];
+    if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
+      const path = join(__dirname, 'static', parsedUrl.pathname);
+      app.serveStatic(req, res, path);
+    } else {
+      const accept = accepts(req);
+      const locale = accept.language(dev ? ['en'] : languages);
+      req.locale = locale;
+      req.localeDataScript = getLocaleDataScript(locale);
+      req.messages = dev ? {} : getMessages(locale);
+      handle(req, res, parsedUrl);
+    }
   }).listen(3000, (err) => {
     if (err) throw err;
-    console.log('> Read on http://localhost:3000');
+    console.info('> Read on http://localhost:3000');
   });
 });
