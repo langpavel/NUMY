@@ -2,6 +2,27 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { answer, gameStart, pause, resume } from '../redux/actions/game';
 
+let hidden = null;
+let visibilityChange = null;
+function detectVisibilityApi() {
+  if (typeof window.document.hidden !== 'undefined') { // Opera 12.10 and Firefox 18 and later support
+    hidden = 'hidden';
+    visibilityChange = 'visibilitychange';
+    return true;
+  }
+  if (typeof window.document.msHidden !== 'undefined') {
+    hidden = 'msHidden';
+    visibilityChange = 'msvisibilitychange';
+    return true;
+  }
+  if (typeof window.document.webkitHidden !== 'undefined') {
+    hidden = 'webkitHidden';
+    visibilityChange = 'webkitvisibilitychange';
+    return true;
+  }
+  return false;
+}
+
 class Keyboard extends PureComponent {
 
   componentDidMount() {
@@ -20,10 +41,23 @@ class Keyboard extends PureComponent {
       }
     };
     window.document.addEventListener('keydown', this._handleKeyDown);
+
+    if (detectVisibilityApi()) {
+      this._handleVisibilityChange = (event) => {
+        if (window.document[hidden]) {
+          console.info('App paused because of visibility');
+          this.props.pause();
+        }
+      };
+      window.document.addEventListener(visibilityChange, this._handleVisibilityChange);
+    }
   }
 
   componentWillUnmount() {
     window.document.removeEventListener('keydown', this._handleKeyDown);
+    if (this._handleVisibilityChange) {
+      window.document.removeEventListener(visibilityChange, this._handleVisibilityChange);
+    }
   }
 
   renderContinue() {

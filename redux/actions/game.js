@@ -58,11 +58,7 @@ const uninstallTick = () => {
   return true;
 };
 
-const getDigitsAt = (index) => {
-  if (index < LEVELS_LENGTH) {
-    return digitsQueue[index];
-  }
-  // out of pre-generated digits,
+const renewDigitsAt = (index) => {
   // generate new -- level 6
   let digits = randomDigits();
   while (classify(digits) < 2) {
@@ -70,6 +66,14 @@ const getDigitsAt = (index) => {
   }
   digitsQueue[index] = digits;
   return digits;
+};
+
+const getDigitsAt = (index) => {
+  if (index < LEVELS_LENGTH) {
+    return digitsQueue[index];
+  }
+  // out of pre-generated digits,
+  return renewDigitsAt(index);
 };
 
 const levelForIndex = (index) => {
@@ -117,8 +121,18 @@ export const answer = (number) => (dispatch, getState) => {
   }
 };
 
-export const pause = () => (dispatch) =>
-  dispatch({ type: actionTypes.PAUSE });
+export const pause = () => (dispatch) => {
+  uninstallTick();
+  return dispatch({ type: actionTypes.PAUSE });
+};
 
-export const resume = () => (dispatch) =>
-  dispatch({ type: actionTypes.RESUME });
+export const resume = () => (dispatch, getState) => {
+  const { game } = getState();
+  installTick(dispatch);
+  return dispatch({
+    type: actionTypes.RESUME,
+    payload: {
+      digits: renewDigitsAt(game.answered),
+    },
+  });
+};

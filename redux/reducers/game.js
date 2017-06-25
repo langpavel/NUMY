@@ -46,12 +46,15 @@ export default function gameReducer(state = getInitialState().game, action) {
     case actionTypes.PAUSE: {
       return {
         ...state,
+        paused: true,
       };
     }
 
     case actionTypes.RESUME: {
       return {
         ...state,
+        paused: false,
+        digits: payload.digits,
       };
     }
 
