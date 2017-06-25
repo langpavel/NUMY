@@ -3,7 +3,5 @@
   "description": "NUMY is a new and simple game based on your ability to sum as fast as you can",
   "greeting": "Welcome to NUMY",
   "index.start": "Start",
-  "index.stat": "Statistics",
-  "index.leader": "Leaderboard",
-  "index.set": "Settings"
+  "index.howto": "How to play"
 }
