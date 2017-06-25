@@ -43,18 +43,24 @@ const generateSet = () => {
 let tickHandle = null;
 let digitsQueue = [];
 
-const installTick = (dispatch) => {
-  if (tickHandle) return false;
-  tickHandle = setInterval(() => {
-    dispatch({ type: actionTypes.TICK, payload: TICK_INTERVAL });
-  }, TICK_INTERVAL);
-  return true;
-};
-
 const uninstallTick = () => {
   if (!tickHandle) return false;
   clearInterval(tickHandle);
   tickHandle = false;
+  return true;
+};
+
+const installTick = (dispatch, getState) => {
+  if (tickHandle) return false;
+  tickHandle = setInterval(() => {
+    const { game } = getState();
+    if (game.timeRemaiming >= TICK_INTERVAL) {
+      dispatch({ type: actionTypes.TICK, payload: TICK_INTERVAL });
+    } else {
+      uninstallTick();
+      dispatch({ type: actionTypes.GAMEEND });
+    }
+  }, TICK_INTERVAL);
   return true;
 };
 
@@ -100,7 +106,7 @@ export const gameStart = ({ useJoker, extraTime }) => (dispatch, getState) => {
     },
   });
 
-  installTick(dispatch);
+  installTick(dispatch, getState);
 
   return result;
 };
@@ -128,7 +134,7 @@ export const pause = () => (dispatch) => {
 
 export const resume = () => (dispatch, getState) => {
   const { game } = getState();
-  installTick(dispatch);
+  installTick(dispatch, getState);
   return dispatch({
     type: actionTypes.RESUME,
     payload: {

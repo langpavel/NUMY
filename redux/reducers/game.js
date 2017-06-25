@@ -61,6 +61,8 @@ export default function gameReducer(state = getInitialState().game, action) {
     case actionTypes.GAMEEND: {
       return {
         ...state,
+        paused: false,
+        running: false,
       };
     }
 
