@@ -114,17 +114,19 @@ export const gameStart = ({ useJoker, extraTime }) => (dispatch, getState) => {
 export const answer = (number) => (dispatch, getState) => {
   const { game } = getState();
   const correct = correctResult(game.digits);
-  if (correct === number) {
-    const answered = game.answered + 1;
-    return dispatch({
-      type: actionTypes.ADVANCE,
-      payload: {
-        answered,
-        level: levelForIndex(answered + 1),
-        digits: getDigitsAt(answered),
-      },
-    });
+  if (correct !== number) {
+    uninstallTick();
+    return dispatch({ type: actionTypes.GAMEEND });
   }
+  const answered = game.answered + 1;
+  return dispatch({
+    type: actionTypes.ADVANCE,
+    payload: {
+      answered,
+      level: levelForIndex(answered + 1),
+      digits: getDigitsAt(answered),
+    },
+  });
 };
 
 export const pause = () => (dispatch) => {
