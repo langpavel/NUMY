@@ -44,7 +44,7 @@ class Keyboard extends PureComponent {
 
     if (detectVisibilityApi()) {
       this._handleVisibilityChange = (event) => {
-        if (window.document[hidden]) {
+        if (window.document[hidden] && this.props.running && !this.props.paused) {
           console.info('App paused because of visibility');
           this.props.pause();
         }
@@ -100,12 +100,12 @@ class Keyboard extends PureComponent {
   render() {
     const { running, paused } = this.props;
 
-    if (paused) {
-      return this.renderContinue();
-    }
-
     if (!running) {
       return this.renderStart();
+    }
+
+    if (paused) {
+      return this.renderContinue();
     }
 
     return (
