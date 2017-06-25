@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import { FormattedMessage } from 'react-intl';
 import { answer, gameStart, pause, resume } from '../redux/actions/game';
 
 let hidden = null;
@@ -93,7 +94,7 @@ class Keyboard extends PureComponent {
           className="keyboard-large-button again"
           onClick={() => this.props.gameStart({ useJoker: false, extraTime: false })}
         >
-          Try again
+          <FormattedMessage id="keyboard.tryAgain" defaultMessage="Try again" />
         </button>
       </div>
     );
@@ -116,9 +117,8 @@ class Keyboard extends PureComponent {
     if (!running) {
       if (isNewGame) {
         return this.renderStart();
-      } else {
-        return this.renderTryAgain();
       }
+      return this.renderTryAgain();
     }
 
     if (paused) {

@@ -1,7 +1,8 @@
 {
+  "keyboard.tryAgain": "Try again",
   "title": "NUMY",
   "description": "NUMY is a new and simple game based on your ability to sum as fast as you can",
-  "greeting": "Welcome to NUMY",
+  "greeting": "Welcome",
   "index.start": "Start",
   "index.howto": "How to play"
 }

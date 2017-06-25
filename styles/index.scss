@@ -3,7 +3,7 @@
 }
 
 body {
-  background: #fff;
+  background: #ddd;
   font-family: Arial, Helvetica, sans-serif;
   color: #000;
   height: 100vh;
@@ -40,6 +40,11 @@ body {
       animation: blinker 2s linear infinite;
     }
   }
+}
+
+.numy {
+  background: #fff;
+  height: 100vh;
 }
 
 .status {
@@ -147,6 +152,10 @@ button.keyboard-large-button {
   font-size: 5.8rem;
   background:#34A853;
   border-bottom: lighten(#34A853, 15%) 0.3rem solid;
+}
+
+button.again {
+  font-size: 3rem;
 }
 
 .keyrow {
