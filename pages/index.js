@@ -19,7 +19,7 @@ const IndexPage = ({ intl }) => (
     </Head>
     <div className="status">
       <div className="name">
-        <FormattedMessage id="greeting" defaultMessage="Welcome to NUMY" />
+        <FormattedMessage id="greeting" defaultMessage="Welcome" />
       </div>
     </div>
     <div className="logo">
@@ -27,7 +27,7 @@ const IndexPage = ({ intl }) => (
     </div>
     <div className="startdisplay">
       <div className="start">
-        <Link href="/game">
+        <Link prefetch href="/game">
           <button>
             <FormattedMessage id="index.start" defaultMessage="Start" />
           </button>

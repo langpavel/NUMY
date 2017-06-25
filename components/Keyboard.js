@@ -86,6 +86,19 @@ class Keyboard extends PureComponent {
     );
   }
 
+  renderTryAgain() {
+    return (
+      <div className="keyboard">
+        <button
+          className="keyboard-large-button again"
+          onClick={() => this.props.gameStart({ useJoker: false, extraTime: false })}
+        >
+          Try again
+        </button>
+      </div>
+    );
+  }
+
   renderCell(num) {
     return (
       <div
@@ -98,10 +111,14 @@ class Keyboard extends PureComponent {
   }
 
   render() {
-    const { running, paused } = this.props;
+    const { isNewGame, running, paused } = this.props;
 
     if (!running) {
-      return this.renderStart();
+      if (isNewGame) {
+        return this.renderStart();
+      } else {
+        return this.renderTryAgain();
+      }
     }
 
     if (paused) {
@@ -130,7 +147,8 @@ class Keyboard extends PureComponent {
   }
 }
 
-const mapStateToProps = ({ game: { running, paused } }) => ({
+const mapStateToProps = ({ game: { isNewGame, running, paused } }) => ({
+  isNewGame,
   running,
   paused,
 });

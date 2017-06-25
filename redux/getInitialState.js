@@ -2,6 +2,7 @@
 export default function getInitialState() {
   return {
     game: {
+      isNewGame: true,
       running: false,
       paused: false,
       answered: 0,

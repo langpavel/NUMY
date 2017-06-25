@@ -1,3 +1,7 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
   background: #fff;
   font-family: Arial, Helvetica, sans-serif;
@@ -26,7 +30,7 @@ body {
   color: #fff;
   text-align: center;
   padding: 3rem 1rem;
-  font-size: 3rem;
+  font-size: 2rem;
   animation: blinker 2s linear infinite;
 
   svg {
@@ -38,21 +42,17 @@ body {
   }
 }
 
-@media (max-height: 700px) {
-  body {
-    font-size: 2rem;
-  }
-}
-
 .status {
   background:#0d5ca4;
   border-bottom: #3fa4ff 0.3rem solid;
   padding: 1rem;
+  height: 4.5rem;
 }
 
 .name {
-  text-align:center;
+  text-align: center;
   color: #FFF;
+  font-size: 2.5rem;
 }
 
 .logo {
@@ -85,10 +85,15 @@ button {
   width: 100%;
 }
 
+.start button {
+  background:#34A853;
+  border-bottom: lighten(#34A853, 15%) 0.3rem solid;
+}
 
 .timer {
   display: inline-block;
   color: #FFF;
+  font-size: 2rem;
 }
 
 .level {
@@ -105,25 +110,43 @@ button {
 }
 
 .display {
-  text-align:center;
+  display: table;
+  width: calc(100% - 4rem);
+  margin: 1rem 2rem;
+  text-align: center;
   font-size: 5.8rem;
   line-height: 8rem;
+  height: calc(50vh - 6.5rem);
+}
+
+.digitrow {
+  display: table-row;
+  height: 100%;
+}
+
+.digit {
+  display: table-cell;
+  font-size: 8rem;
+  margin: auto;
+  vertical-align: middle;
 }
 
 .keyboard {
+  position: relative;
   display: table;
-  position: absolute;
-  bottom:0;
-  right:0;
-  left:0;
   width: 100%;
   user-select: none;
+  height: 50vh;
 }
 
-.keyboard-large-button {
+button.keyboard-large-button {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  height: 25rem;
+  height: 66%;
   font-size: 5.8rem;
+  background:#34A853;
+  border-bottom: lighten(#34A853, 15%) 0.3rem solid;
 }
 
 .keyrow {
@@ -136,76 +159,11 @@ button {
   text-align: center;
   border: #FFF solid 0.05rem;
   font-size: 4.6rem;
-  background:#3fa4ff;
+  background:#34A853;
   color: #FFF;
-  line-height: 8.5rem;
+  vertical-align: middle;
 }
 
 .keycell:focus {
   outline: none;
 }
-
-/*for pc*/
-/*
-@media (min-width: 1200px) {
-  body {
-    background: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #000;
-    height: 100vh;
-    position: relative;
-    margin: 0 auto;
-    border-right:#CCC solid 1px;
-    border-left:#CCC solid 1px;
-    width: 600px;
-  }
-
-  .startstatus {
-    background:#0d5ca4;
-    height: 12vh;
-  }
-
-  .name {
-    padding-top: 3vh;
-    text-align:center;
-    color: #FFF;
-    font-size: 2.5rem;
-  }
-
-  .startdisplay {
-    padding-left: 60px;
-    padding-right: 60px;
-  }
-
-  .start {
-    border-bottom: #CCC solid 1px;
-    font-size: 2rem;
-    color: #0d5ca4;
-    line-height: 5rem;
-  }
-
-
-
-  .stat {
-    border-bottom: #CCC solid 1px;
-    font-size: 2rem;
-    color: #0d5ca4;
-    line-height: 5rem;
-  }
-
-  .leader {
-    border-bottom: #CCC solid 1px;
-    font-size: 2rem;
-    color: #0d5ca4;
-    line-height: 5rem;
-  }
-
-  .set {
-    border-bottom: #CCC solid 1px;
-    font-size: 2rem;
-    color: #0d5ca4;
-    line-height: 5rem;
-  }
-
-}
-*/

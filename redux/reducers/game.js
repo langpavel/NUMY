@@ -12,6 +12,7 @@ export default function gameReducer(state = getInitialState().game, action) {
       return {
         // ...state,
         running: true,
+        isNewGame: false,
         paused: false,
         answered: 0,
         digits: payload.digits,
