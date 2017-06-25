@@ -17,21 +17,30 @@ const IndexPage = ({ intl }) => (
     <Head>
       <meta name="description" content={intl.formatMessage(messages.description)} />
     </Head>
-    <div className="startstatus">
+    <div className="status">
       <div className="name">
         <FormattedMessage id="greeting" defaultMessage="Welcome to NUMY" />
       </div>
     </div>
-    <div className="line" />
     <div className="logo">
-      <img width="150" height="150" src="/android-chrome-256x256.png" alt="NUMY" />
+      <img width="256" height="256" src="/android-chrome-256x256.png" alt="NUMY" />
     </div>
     <div className="startdisplay">
-      <Link href="/game">
-        <div className="start">
-          <FormattedMessage id="index.start" defaultMessage="Start" />
-        </div>
-      </Link>
+      <div className="start">
+        <Link href="/game">
+          <button>
+            <FormattedMessage id="index.start" defaultMessage="Start" />
+          </button>
+        </Link>
+      </div>
+      <div className="howto">
+        <Link href="/howto">
+          <button>
+            <FormattedMessage id="index.howto" defaultMessage="How to play" />
+          </button>
+        </Link>
+      </div>
+      { /*
       <div className="stat">
         <FormattedMessage id="index.stat" defaultMessage="Statistics" />
       </div>
@@ -41,6 +50,7 @@ const IndexPage = ({ intl }) => (
       <div className="set">
         <FormattedMessage id="index.set" defaultMessage="Settings" />
       </div>
+      */ }
     </div>
   </Layout>
 );
