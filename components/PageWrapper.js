@@ -44,6 +44,26 @@ export default (Page, ...extraForConnect) => {
       } catch (err) {
         // ignore
       }
+
+      try {
+        const screen = window.screen;
+        if (screen) {
+          screen.lockOrientationUniversal =
+            screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
+
+          if (screen.lockOrientationUniversal && screen.lockOrientationUniversal('portrait')) {
+            window.Rollbar.debug('Orientation locked');
+          } else {
+            window.Rollbar.debug('Orientation lock failed');
+          }
+        } else {
+          window.Rollbar.debug('Orientation API not supported');
+        }
+      } catch (err) {
+        if (window.Rollbar) {
+          window.Rollbar.debug(`Orientation lock error: ${err.message}`);
+        }
+      }
     }
 
     render() {
