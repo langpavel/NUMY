@@ -10,7 +10,9 @@ body {
 }
 
 @keyframes blinker {
-  50% { color: #3fa4ff; }
+  0% { color: #ffffff; fill: #ffffff; }
+  50% { color: #3fa4ff; fill: #3fa4ff; }
+  100% { color: #ffffff; fill: #ffffff; }
 }
 
 #loading {
@@ -23,9 +25,17 @@ body {
   background-color: #0d5ca4;
   color: #fff;
   text-align: center;
-  padding-top: 50%;
+  padding: 3rem 1rem;
   font-size: 3rem;
   animation: blinker 2s linear infinite;
+
+  svg {
+    display: inline-block;
+    width: 80%;
+    path {
+      animation: blinker 2s linear infinite;
+    }
+  }
 }
 
 @media (max-height: 700px) {
