@@ -2,6 +2,7 @@
   "keyboard.gameOver": "KONEC HRY",
   "keyboard.tryAgain": "Znovu!",
   "title": "NUMY",
+  "votebutton": "Hlasuj pro nás",
   "howto": "NUMY je nová jednoduchá hra založená na Tvé schopnosti co nejrychleji sčítat. Za daný čas projdi přes co nejvíce levelů a dostaň se až na vrcholy světových žebříčků - tam na Tebe mimo jiné čekají různá překvapení!{br}{br}Co musím udělat?{br}Vypočítej co nejrychleji ciferný součet{br}3- nebo 4-ciferného čísla. Součet opakuj dokud nedostaneš konečný{br}výsledek 1 až 9!{br}Např.: 606; 6+0+6=12; 1+2=3 - klikni na 3!{br}{br}Kolik na to mám času?{br}60 sekund. Vyřeš za tu dobu co nejvíc součtů! Konečné skóre můžeš klidně sdílet mezi svými přáteli.{br}{br}Můžu hraním něco získat?{br}Ano! Každý měsíc vyhraje hráč s nejlepším skóre hodnotné ceny od organizátorů. Takže se snaž!{br}{br}Myslíš, že na to máš? Hrej NUMY a dokaž nám to!",
   "howto.title": "Jak hrát",
   "howto.start": "Spustit hru",
@@ -13,4 +14,3 @@
   "index.set": "Nastavení",
   "index.howto": "Jak hrát"
 }
-
