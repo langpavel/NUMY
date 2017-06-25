@@ -97,8 +97,14 @@ button {
 
 .timer {
   display: inline-block;
+  position: absolute;
+  left: 1rem;
   color: #FFF;
   font-size: 2rem;
+}
+
+.timer.paused {
+  animation: blinker 2s linear infinite;
 }
 
 .level {

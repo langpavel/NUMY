@@ -17,6 +17,41 @@ class Game extends Component {
     }
   }
 
+  renderDisplay() {
+    const { running, paused, level, digits, timeRemaiming } = this.props;
+    if (running && !paused) {
+      return (
+        <div className="display">
+          <div className="digitrow">
+            <span className="digit">{digits[0]}</span>
+            <span className="digit">{digits[1]}</span>
+            <span className="digit">{digits[2]}</span>
+            <span className="digit">{digits[3]}</span>
+          </div>
+        </div>
+      );
+    }
+    if (paused) {
+      return (
+        <div className="display">
+          <div className="digitrow paused">
+            <span className="digit">Paused</span>
+          </div>
+        </div>
+      );
+    }
+    return (
+      <div className="display">
+        <div className="digitrow empty">
+          <span className="digit">–</span>
+          <span className="digit">–</span>
+          <span className="digit">–</span>
+          <span className="digit">–</span>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     const { running, paused, level, digits, timeRemaiming } = this.props;
     return (
@@ -33,16 +68,7 @@ class Game extends Component {
               <div className="level">Level { level }</div>
             </div>
           )}
-          <div className="display">
-            {(running && !paused) ? (
-              <div className="digitrow">
-                <span className="digit">{digits[0]}</span>
-                <span className="digit">{digits[1]}</span>
-                <span className="digit">{digits[2]}</span>
-                <span className="digit">{digits[3]}</span>
-              </div>
-            ) : null}
-          </div>
+          {this.renderDisplay()}
           <Keyboard />
         </div>
       </Layout>
