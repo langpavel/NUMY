@@ -43,10 +43,10 @@ class Game extends Component {
     return (
       <div className="display">
         <div className="digitrow empty">
-          <span className="digit">–</span>
-          <span className="digit">–</span>
-          <span className="digit">–</span>
-          <span className="digit">–</span>
+          <span className="digit">-</span>
+          <span className="digit">-</span>
+          <span className="digit">-</span>
+          <span className="digit">-</span>
         </div>
       </div>
     );

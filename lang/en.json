@@ -2,8 +2,11 @@
   "keyboard.gameOver": "GAME OVER",
   "keyboard.tryAgain": "Try again",
   "title": "NUMY",
+  "howto": "NUMY is a new and simple game based on your ability to sum as fast as you can. During the given time, go through as many levels as you can and get to the tops of the world's halls of fame - that's where various surprises are waiting for you!{br}\n      {br}\n      What should I do?{br}\n      Count the digit root of 3- or 4-digit numbers as fast as you can.{br}\n      E.g. 606; 6+0+6=12; 1+2=3; click 3!{br}\n      {br}\n      How much time do I have?{br}\n      60 seconds. Solve as many sums as you can! You can also share your final score with your friends.{br}\n      {br}\n      Can I get something by playing?{br}\n      Yes! Each month the player with the highest score wins valuable prizes from the organizators. So try your best!{br}\n      {br}\n      So do you think you've got what it takes? Play NUMY and proove us!",
+  "howto.title": "How to Play",
+  "howto.start": "Play Now!",
   "description": "NUMY is a new and simple game based on your ability to sum as fast as you can",
   "greeting": "Welcome",
   "index.start": "Start",
-  "index.howto": "How to play"
+  "index.howto": "How to Play"
 }

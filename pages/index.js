@@ -22,7 +22,7 @@ const IndexPage = ({ intl }) => (
         <FormattedMessage id="greeting" defaultMessage="Welcome" />
       </div>
     </div>
-    <div className="logo">
+    <div className="logo fill">
       <img width="256" height="256" src="/android-chrome-256x256.png" alt="NUMY" />
     </div>
     <div className="startdisplay">
@@ -33,10 +33,10 @@ const IndexPage = ({ intl }) => (
           </button>
         </Link>
       </div>
-      <div className="howto">
+      <div>
         <Link href="/howto">
           <button>
-            <FormattedMessage id="index.howto" defaultMessage="How to play" />
+            <FormattedMessage id="index.howto" defaultMessage="How to Play" />
           </button>
         </Link>
       </div>

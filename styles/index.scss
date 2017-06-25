@@ -61,9 +61,12 @@ body {
 }
 
 .logo {
-  height: calc(100vh - 21rem);
   padding: 1rem;
   text-align: center;
+}
+
+.logo.fill {
+  height: calc(100vh - 21rem);
 }
 
 .logo > img {
@@ -143,6 +146,10 @@ button {
   vertical-align: middle;
 }
 
+.digitrow.paused .digit {
+  font-size: 5rem;
+}
+
 .keyboard {
   position: relative;
   display: table;
@@ -189,4 +196,11 @@ button.again {
   text-align: center;
   color: darken(#0d5ca4, 10%);
   font-weight: bold;
+}
+
+.howto {
+  font-size: 1rem;
+  color: darken(#0d5ca4, 10%);
+  background-color: #fff;
+  padding: 1rem;
 }
