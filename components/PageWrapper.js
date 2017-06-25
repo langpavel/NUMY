@@ -36,9 +36,13 @@ export default (Page, ...extraForConnect) => {
     }
 
     componentDidMount() {
-      const el = window.document.getElementById('loading');
-      if (el) {
-        el.parentElement.removeChild(el);
+      try {
+        const el = window.document.getElementById('loading');
+        if (el) {
+          el.parentElement.removeChild(el);
+        }
+      } catch (err) {
+        // ignore
       }
     }
 
