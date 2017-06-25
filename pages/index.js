@@ -24,7 +24,7 @@ const IndexPage = ({ intl }) => (
     </div>
     <div className="line" />
     <div className="logo">
-      <img width="150" height="150" src="/numy.png" alt="NUMY" />
+      <img width="150" height="150" src="/android-chrome-256x256.png" alt="NUMY" />
     </div>
     <div className="startdisplay">
       <Link href="/game">

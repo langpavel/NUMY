@@ -42,9 +42,17 @@ app.prepare().then(() => {
   createServer((req, res) => {
     const parsedUrl = parse(req.url, true);
     const rootStaticFiles = [
-      '/numy.png',
-      // '/sitemap.xml',
-      // '/favicon.ico',
+      '/android-chrome-192x192.png',
+      '/android-chrome-256x256.png',
+      '/apple-touch-icon.png',
+      '/browserconfig.xml',
+      '/favicon-16x16.png',
+      '/favicon-32x32.png',
+      '/favicon.ico',
+      '/manifest.json',
+      '/mstile-150x150.png',
+      '/numy-full.png',
+      '/safari-pinned-tab.svg',
     ];
     if (rootStaticFiles.indexOf(parsedUrl.pathname) > -1) {
       const path = join(__dirname, 'static', parsedUrl.pathname);
