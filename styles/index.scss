@@ -80,8 +80,10 @@ body {
   padding: 0 1rem;
 }
 
-button {
+button, .button {
   display: block;
+  text-decoration: none;
+  text-align: center;
   cursor: pointer;
   border: none;
   border-bottom: #3fa4ff 0.3rem solid;
@@ -96,6 +98,11 @@ button {
 .start button {
   background:#34A853;
   border-bottom: lighten(#34A853, 15%) 0.3rem solid;
+}
+
+.vote a {
+  background:#C8110B;
+  border-bottom: lighten(#C8110B, 15%) 0.3rem solid;
 }
 
 .timer {

@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import wrapPage from '../components/PageWrapper';
 import Layout from '../components/Layout';
+import VoteButton from '../components/VoteButton';
 
 const messages = defineMessages({
   description: {
@@ -40,6 +41,7 @@ const IndexPage = ({ intl }) => (
           </button>
         </Link>
       </div>
+      <VoteButton />
       { /*
       <div className="stat">
         <FormattedMessage id="index.stat" defaultMessage="Statistics" />

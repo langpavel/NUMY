@@ -3,6 +3,7 @@ import { FormattedMessage, defineMessages } from 'react-intl';
 import Link from 'next/link';
 import wrapPage from '../components/PageWrapper';
 import Layout from '../components/Layout';
+import VoteButton from '../components/VoteButton';
 
 const messages = defineMessages({
   howto: {
@@ -49,6 +50,7 @@ class Howto extends Component {
               </button>
             </Link>
           </div>
+          <VoteButton />
         </div>
       </Layout>
     );

@@ -12,7 +12,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
+  "description": "NUMY is a new and simple game based on your ability to sum as fast as you can",
+  "theme_color": "#0D5CA4",
   "background_color": "#ffffff",
   "display": "standalone",
   "start_url": "/",
