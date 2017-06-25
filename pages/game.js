@@ -19,7 +19,6 @@ const Game = ({ running, paused, level, digits, timeRemaiming, jokerAvailable })
           <div className="level">Level { level }</div>
         </div>
       )}
-      <div className="line" />
       <div className="display">
         {(running && !paused) ? (
           <div className="digitrow">

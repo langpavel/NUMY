@@ -47,10 +47,10 @@ body {
 .status {
   background:#0d5ca4;
   border-bottom: #3fa4ff 0.3rem solid;
+  padding: 1rem;
 }
 
 .name {
-  padding: 1rem;
   text-align:center;
   color: #FFF;
 }
@@ -86,24 +86,17 @@ button {
 }
 
 
-
-
 .timer {
   display: inline-block;
-  padding-top: 3vh;
-  padding-left: 6vh;
   color: #FFF;
-  font-size: 2.5rem;
 }
 
 .level {
   display: inline-block;
   position: absolute;
-  right: 0;
-  padding-top: 3vh;
-  padding-right: 6vh;
+  right: 1rem;
   color: #FFF;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 .line {
