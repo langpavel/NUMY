@@ -14,7 +14,6 @@ export default function gameReducer(state = getInitialState().game, action) {
         running: true,
         paused: false,
         answered: 0,
-        level: 1,
         digits: payload.digits,
         timeRemaiming: payload.extraTime ? 70000 : 60000,
         jokerAvailable: payload.useJoker,
@@ -25,7 +24,6 @@ export default function gameReducer(state = getInitialState().game, action) {
       return {
         ...state,
         answered: payload.answered,
-        level: payload.level,
         digits: payload.digits,
       };
     }

@@ -82,16 +82,6 @@ const getDigitsAt = (index) => {
   return renewDigitsAt(index);
 };
 
-const levelForIndex = (index) => {
-  let level = 1;
-  let reminder = index;
-  while ((level < LEVEL_LENGTHS.length) && (LEVEL_LENGTHS[level] < reminder)) {
-    reminder -= LEVEL_LENGTHS[level];
-    level++;
-  }
-  return level;
-};
-
 export const gameStart = ({ useJoker, extraTime }) => (dispatch, getState) => {
   digitsQueue = generateSet();
   const state = getState();
@@ -123,7 +113,6 @@ export const answer = (number) => (dispatch, getState) => {
     type: actionTypes.ADVANCE,
     payload: {
       answered,
-      level: levelForIndex(answered + 1),
       digits: getDigitsAt(answered),
     },
   });

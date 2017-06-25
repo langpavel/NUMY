@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import Keyboard from '../components/Keyboard';
 import Timer from '../components/Timer';
 
-const Game = ({ running, paused, answered, level, digits, timeRemaiming, jokerAvailable }) => (
+const Game = ({ running, paused, level, digits, timeRemaiming, jokerAvailable }) => (
   <Layout>
     <div className="game">
       {paused ? (
@@ -35,6 +35,9 @@ const Game = ({ running, paused, answered, level, digits, timeRemaiming, jokerAv
   </Layout>
 );
 
-const mapStateToProps = ({ game }) => game;
+const mapStateToProps = ({ game }) => ({
+  ...game,
+  level: game.answered + 1,
+});
 
 export default wrapPage(Game, mapStateToProps);
