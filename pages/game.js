@@ -3,19 +3,20 @@ import { FormattedMessage } from 'react-intl';
 import wrapPage from '../components/PageWrapper';
 import Layout from '../components/Layout';
 import Keyboard from '../components/Keyboard';
+import Timer from '../components/Timer';
 
 const Game = ({ running, paused, answered, level, digits, timeRemaiming, jokerAvailable }) => (
   <Layout>
     <div className="game">
-      {running ? (
+      {paused ? (
         <div className="status">
-          <div className="timer">{ timeRemaiming }</div>
+          <Timer timeRemaiming={timeRemaiming} running={running} paused={paused} />
           <div className="level">Level { level }</div>
         </div>
       ) : (
         <div className="status">
-          <div className="timer">{ timeRemaiming }</div>
-          <div className="level">stopped</div>
+          <Timer timeRemaiming={timeRemaiming} running={running} paused={paused} />
+          <div className="level">Level { level }</div>
         </div>
       )}
       <div className="line" />
