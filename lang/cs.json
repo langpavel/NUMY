@@ -7,5 +7,6 @@
   "index.leader": "Leaderboard",
   "index.set": "Nastavení",
   "index.howto": "Jak hrát",
-  "keyboard.tryAgain": "Znovu!"
+  "keyboard.tryAgain": "Znovu!",
+  "keyboard.gameOver": "KONEC HRY"
 }

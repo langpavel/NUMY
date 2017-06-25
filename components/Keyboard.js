@@ -90,6 +90,11 @@ class Keyboard extends PureComponent {
   renderTryAgain() {
     return (
       <div className="keyboard">
+        <div className="keyrow">
+          <div className="gameover">
+            <FormattedMessage id="keyboard.gameOver" defaultMessage="GAME OVER" />
+          </div>
+        </div>
         <button
           className="keyboard-large-button again"
           onClick={() => this.props.gameStart({ useJoker: false, extraTime: false })}
