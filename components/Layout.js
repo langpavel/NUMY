@@ -38,7 +38,13 @@ export default injectIntl(({ intl, title, children }) => (
         dangerouslySetInnerHTML={{ __html: stylesheet }} // eslint-disable-line react/no-danger
       />
     </Head>
+    <div id="loading" className="loading">
+      Loading ...
+    </div>
     <div className="numy">
+      <noscript>
+        JavaScript is required!
+      </noscript>
       {children}
     </div>
   </div>

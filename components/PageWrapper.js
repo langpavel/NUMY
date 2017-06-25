@@ -35,6 +35,13 @@ export default (Page, ...extraForConnect) => {
       return { ...props, locale, messages, now };
     }
 
+    componentDidMount() {
+      const el = window.document.getElementById('loading');
+      if (el) {
+        el.parentElement.removeChild(el);
+      }
+    }
+
     render() {
       const { locale, messages, now, ...props } = this.props;
       return (
