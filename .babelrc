@@ -3,13 +3,8 @@
     "next/babel"
   ],
   "plugins": [
-    [
-      "module-resolver", {
-        "root": ["."],
-        "alias": {
-          "styles": "./styles"
-        },
-        "cwd": "babelrc"
+    ["react-intl", {
+      "messagesDir": "lang/.messages/"
     }],
     [
       "wrap-in-js",
@@ -18,19 +13,5 @@
       }
     ]
   ],
-  "env": {
-    "development": {
-      "plugins": [
-        "react-intl"
-      ]
-    },
-    "production": {
-      "plugins": [
-        ["react-intl", {
-          "messagesDir": "lang/.messages/"
-        }]
-      ]
-    }
-  },
   "ignore": []
 }

@@ -14,8 +14,10 @@ module.exports = {
     'jsx-a11y/html-has-lang': 'warn',
     'no-prototype-builtins': 'warn',
     'no-param-reassign': 'off',
+    'no-plusplus': 'off',
     'import/no-dynamic-require': 'off',
     'global-require': 'off',
+    'arrow-parens': ['warn', 'always'],
     // Recommend not to leave any console.log in your code
     'no-console': [
       'warn',

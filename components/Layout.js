@@ -2,7 +2,7 @@ import React from 'react';
 import { defineMessages, injectIntl } from 'react-intl';
 import Head from 'next/head';
 
-import stylesheet from 'styles/index.scss';
+import stylesheet from '../styles/index.scss';
 
 const messages = defineMessages({
   title: {
@@ -20,8 +20,8 @@ export default injectIntl(({ intl, title, children }) => (
         dangerouslySetInnerHTML={{ __html: stylesheet }} // eslint-disable-line react/no-danger
       />
     </Head>
-
-    {children}
-
+    <div className="numy">
+      {children}
+    </div>
   </div>
 ));

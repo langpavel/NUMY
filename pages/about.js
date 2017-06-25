@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { FormattedRelative } from 'react-intl';
-import pageWithIntl from '../components/PageWithIntl';
+import wrapPage from '../components/PageWrapper';
 import Layout from '../components/Layout';
 
 class About extends Component {
@@ -22,4 +22,4 @@ class About extends Component {
   }
 }
 
-export default pageWithIntl(About);
+export default wrapPage(About);

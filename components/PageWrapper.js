@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import withRedux from 'next-redux-wrapper';
 import { IntlProvider, addLocaleData, injectIntl } from 'react-intl';
+import initStore from '../redux/store';
+
 
 // Register React Intl's locale data for the user's locale in the browser. This
 // locale data was added to the page by `pages/_document.js`. This only happens
@@ -10,10 +13,10 @@ if (typeof window !== 'undefined' && window.ReactIntlLocaleData) {
   });
 }
 
-export default (Page) => {
+export default (Page, ...extraForConnect) => {
   const IntlPage = injectIntl(Page);
 
-  return class PageWithIntl extends Component {
+  class PageWithIntl extends Component {
     static async getInitialProps(context) {
       let props;
       if (typeof Page.getInitialProps === 'function') {
@@ -40,5 +43,7 @@ export default (Page) => {
         </IntlProvider>
       );
     }
-  };
+  }
+
+  return withRedux(initStore, ...extraForConnect)(PageWithIntl);
 };
